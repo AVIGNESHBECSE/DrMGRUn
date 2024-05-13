@@ -1,0 +1,258 @@
+<div class="containter">
+    <!-- <div class="row mt-3">
+
+    </div> -->
+      <div class="modal-content">
+      <!-- <div class="col-12 text-center">
+          <h5><b>Journal</b></h5>
+      </div> -->
+    <form #researchForm="ngForm">
+      <div class="modal-header">
+        <span class="fs-6 fw-semibold">Journal
+        </span>
+        <button type="button" class="close" aria-label="Close" (click)="close()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+      <div class="row mt-3 px-5">
+        <div class="col-2 text-end">
+          <label for="name">Papar title<span class="text-danger">*</span>:</label>
+        </div>
+        <div class="col-6">
+          <input type="text" class="form-control">
+        </div> 
+        </div>
+        <div class="row mt-3 px-5">
+          <div class="col-2 text-end">
+            <label for="name">Publication month <span class="text-danger">*</span>:</label>
+          </div>
+          <div class="col-6">
+            <ng-select [searchable]="true" [clearable]="false" name="examTypefacultyName" required>                  <ng-option value="" [disabled]>------------------Select-----------------</ng-option>
+                </ng-select>
+          </div> 
+        </div>
+        <div class="row mt-3 px-5">
+          <div class="col-2 text-end">
+            <label for="name">Publication year<span class="text-danger">*</span>:</label>
+          </div>
+          <div class="col-6">
+            <ng-select [searchable]="true" [clearable]="false" name="examTypefacultyName" required>                  <ng-option value="" [disabled]>------------------Select-----------------</ng-option>
+                </ng-select>
+          </div> 
+        </div>
+        <div class="row mt-3 px-5">
+          <div class="col-2 text-end">
+            <label for="name">Journal name<span class="text-danger">*</span>:</label>
+          </div>
+          <div class="col-6">
+            <input type="text" class="form-control">
+          </div> 
+          </div>
+          <div class="row mt-3 px-5">
+            <div class="col-2 text-end">
+              <label for="name">Author Institutue<span class="text-danger">*</span>:</label>
+            </div>
+            <div class="col-9">
+              <ng-select [searchable]="true" [clearable]="false" name="examTypefacultyName" required>                  <ng-option value="" [disabled]>------------------Select-----------------</ng-option>
+                  </ng-select>
+            </div> 
+          </div>
+          <div class="row mt-3 px-5">
+            <div class="col-2 text-end">
+              <label for="name">Thomson Reuters H-index:</label>
+            </div>
+            <div class="col-6">
+              <input type="text" class="form-control">
+            </div> 
+            </div>
+            <div class="row mt-3 px-5">
+              <div class="col-2 text-end">
+                <label for="name">Thomson Reuters Citation index:</label>
+              </div>
+              <div class="col-6">
+                <input type="text" class="form-control">
+              </div> 
+              </div>
+              <div class="row mt-3 px-5">
+                <div class="col-2 text-end">
+                  <label for="name">Author Scopus H index<span class="text-danger">*</span>:</label>
+                </div>
+                <div class="col-6">
+                  <input type="text" class="form-control">
+                </div> 
+                </div>
+                <div class="row mt-3 px-5">
+                  <div class="col-2 text-end">
+                    <label for="name">Author Scopus Citation index<span class="text-danger">*</span>:</label>
+                  </div>
+                  <div class="col-6">
+                    <input type="text" class="form-control">
+                  </div> 
+                  </div>
+                  <div class="row mt-3 px-5">
+                    <div class="col-2 text-end">
+                      <label for="name">Co-Author Institute<span class="text-danger">*</span>:</label>
+                    </div>
+                    <div class="col-9">
+                      <ng-select [searchable]="true" [clearable]="false" name="examTypefacultyName" required>                  <ng-option value="" [disabled]>------------------Select-----------------</ng-option>
+                          </ng-select>
+                    </div> 
+                  </div>
+                  <div class="row mt-3 px-5">
+                    <div class="col-2 text-end">
+                      <label for="name">Publisher name<span class="text-danger">*</span>:</label>
+                    </div>
+                    <div class="col-6">
+                      <ng-select [searchable]="true" [clearable]="false" name="examTypefacultyName" required>                  <ng-option value="" [disabled]>------------------Select-----------------</ng-option>
+                          </ng-select>
+                    </div> 
+                  </div>
+                  <div class="row mt-3 px-5">
+                    <div class="col-2 text-end">
+                      <label for="name">Country<span class="text-danger">*</span>:</label>
+                    </div>
+                    <div class="col-6">
+                      <ng-select [searchable]="true" [clearable]="false" name="examTypefacultyName" required>                  <ng-option value="" [disabled]>------------------Select-----------------</ng-option>
+                          </ng-select>
+                    </div> 
+                  </div>
+                  <div class="row mt-3 px-5">
+                    <div class="col-2 text-end">
+                      <label for="name">ISSN no.<span class="text-danger">*</span>:</label>
+                    </div>
+                    <div class="col-6">
+                      <input type="text" class="form-control">
+                    </div> 
+                    </div>
+                    <div class="row mt-3 px-5">
+                      <div class="col-2 text-end">
+                        <label for="name">Volume no.<span class="text-danger">*</span>:</label>
+                      </div>
+                      <div class="col-6">
+                        <input type="text" class="form-control">
+                      </div> 
+                      </div>
+                      <div class="row mt-3 px-5">
+                        <div class="col-2 text-end">
+                          <label for="name">Issue no.<span class="text-danger">*</span>:</label>
+                        </div>
+                        <div class="col-6">
+                          <input type="text" class="form-control">
+                        </div> 
+                        </div>
+                        <div class="row mt-3 px-5">
+                          <div class="col-2 text-end">
+                            <label for="name">Page no.<span class="text-danger">*</span>:</label>
+                          </div>
+                          <div class="col-1">
+                            <input type="text" class="form-control">
+                          </div>
+                          <div class="col-1">to</div>
+                          <div class="col-1">
+                             <input type="text" class="form-control"></div> 
+                          </div>
+                          <div class="row mt-3 px-5">
+                            <div class="col-2 text-end">
+                              <label for="name">Published link<span class="text-danger">*</span>:</label>
+                            </div>
+                            <div class="col-6">
+                              <input type="text" class="form-control">
+                            </div> 
+                            </div>   
+                            <div class="row mt-3 px-5">
+                              <div class="col-2 text-end">
+                                <label for="name">Journal link in Scimagojr<span class="text-danger">*</span>:</label>
+                              </div>
+                              <div class="col-6">
+                                <input type="text" class="form-control">
+                              </div> 
+                              </div>   
+                              <div class="row mt-3 px-5">
+                                <div class="col-2 text-end">
+                                  <label for="name">Journal Scimagojr SJR value<span class="text-danger">*</span>:</label>
+                                </div>
+                                <div class="col-6">
+                                  <input type="text" class="form-control">
+                                </div> 
+                                </div>   
+                                <div class="row mt-3 px-5">
+                                  <div class="col-2 text-end">
+                                    <label for="name">Journal Scimagojr H index<span class="text-danger">*</span>:</label>
+                                  </div>
+                                  <div class="col-6">
+                                    <input type="text" class="form-control">
+                                  </div> 
+                                  </div>   
+                                  <div class="row mt-3 px-5">
+                                    <div class="col-2 text-end">
+                                      <label for="name">Journal Impact factor<span class="text-danger">*</span>:</label>
+                                    </div>
+                                    <div class="col-6">
+                                      <input type="text" class="form-control">
+                                    </div> 
+                                    </div>   
+                                    <div class="row mt-3 px-5">
+                                      <div class="col">
+                                        <label for="name">Whether Journal indexed in Thomson Reuter Web of Science? Type<span class="text-danger">*</span>:</label>
+                                      </div>  
+                                      <div class="row mt-3 px-5">
+                                        <div class="col-1">
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                                        <label class="form-check-label" for="gridRadios1">
+                                          Yes
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                                        <label class="form-check-label" for="gridRadios2">
+                                          No
+                                        </label>
+                                      </div>        
+                                    </div>
+                                    </div>
+                                    </div>
+                      <div class="row my-3">
+                        <div class="col-12 text-center">
+                          <button class="btn btn-success" type="submit">Submit</button>
+                        </div>
+                      </div>
+                    
+    </form>
+
+    <!-- <form >
+        <div class="form-row mt-3 px-5">
+            <div class="col-4">
+              <label for="name" >Paper title<span class="text-danger">*</span>:</label>
+          </div>
+            <div class="col-9">
+              <input type="text" class="form-control" #name="ngModel" placeholder="Name" id="name"
+                name="name" [(ngModel)]="create.name" ngModel required>
+              <span
+                *ngIf="(researchForm.submitted && name.invalid) || (name.invalid && name.touched)"
+                style="color: red;">
+                Paper title required
+              </span>
+            </div>
+          </div>
+          
+          <div class="form-row mt-3 px-5">
+            <div class="col-4">
+              <label for="color" >Publication month<span class="text-danger">*</span>:</label>
+            </div>
+            <div class="col-9">
+           
+              <ng-select [searchable]="true" [clearable]="false" #facultyName="ngModel" name="examTypefacultyName" required
+                      [(ngModel)]="create.facultyName" (change)="getDepartmentList(create.facultyName)">
+                      <ng-option value="" [disabled]>------------------Select-----------------</ng-option>
+                      <ng-option [value]="each" *ngFor="let each of facultys">
+                        {{each.name}}
+                      </ng-option>
+                    </ng-select>
+              <span *ngIf="(researchForm.submitted && facultyName.invalid) || (facultyName.invalid && facultyName.touched)"
+                style="color: red;">Faculty Required</span>
+            </div>
+          </div>
+    </form> -->
+</div>
+</div>

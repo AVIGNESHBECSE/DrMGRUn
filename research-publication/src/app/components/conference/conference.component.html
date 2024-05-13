@@ -1,0 +1,244 @@
+<div class="containter">
+    <!-- <div class="row mt-3">
+    </div> -->
+      <!-- <div class="col-12 text-center">
+          <h5><b>Conference</b></h5>
+      </div> -->
+    <div class="modal-content">
+    <form #researchForm="ngForm">
+      <div class="modal-header">
+        <span class="fs-6 fw-semibold">Conference
+        </span>
+        <button type="button" class="close" aria-label="Close" (click)="close()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+      <div class="row mt-3 px-5">
+        <div class="col-2 text-end">
+          <label for="name">Papar title<span class="text-danger">*</span>:</label>
+        </div>
+        <div class="col-6">
+          <input type="text" class="form-control">
+        </div> 
+        </div>
+        <div class="row mt-3 px-5">
+          <div class="col-2 text-end">
+            <label for="name">Publication month <span class="text-danger">*</span>:</label>
+          </div>
+          <div class="col-6">
+            <ng-select [searchable]="true" [clearable]="false" name="examTypefacultyName" required>                  
+                <ng-option value="" [disabled]>------------------Select-----------------</ng-option>
+                </ng-select>
+          </div> 
+        </div>
+        <div class="row mt-3 px-5">
+          <div class="col-2 text-end">
+            <label for="name">Publication year<span class="text-danger">*</span>:</label>
+          </div>
+          <div class="col-6">
+            <ng-select [searchable]="true" [clearable]="false" name="examTypefacultyName" required>                  
+                <ng-option value="" [disabled]>------------------Select-----------------</ng-option>
+                </ng-select>
+          </div> 
+        </div>
+        <div class="row mt-3 px-5">
+          <div class="col-2 text-end">
+            <label for="name">Conference name<span class="text-danger">*</span>:</label>
+          </div>
+          <div class="col-6">
+            <input type="text" class="form-control">
+          </div> 
+          </div>
+          <!-- <div class="row mt-3 px-5">
+            <div class="col-2 text-end">
+              <label for="name">Author Institutue<span class="text-danger">*</span>:</label>
+            </div>
+            <div class="col-9">
+              <ng-select [searchable]="true" [clearable]="false" name="examTypefacultyName" required>                  <ng-option value="" [disabled]>------------------Select-----------------</ng-option>
+                  </ng-select>
+            </div> 
+          </div> -->
+          <div class="row mt-3 px-5">
+            <div class="col-2 text-end">
+              <label for="name">Thomson Reuters H-index:</label>
+            </div>
+            <div class="col-6">
+              <input type="text" class="form-control">
+            </div> 
+            </div>
+            <div class="row mt-3 px-5">
+              <div class="col-2 text-end">
+                <label for="name">Thomson Reuters Citation index:</label>
+              </div>
+              <div class="col-6">
+                <input type="text" class="form-control">
+              </div> 
+              </div>
+              <div class="row mt-3 px-5">
+                <div class="col-2 text-end">
+                  <label for="name">Hosting Institute<span class="text-danger">*</span>:</label>
+                </div>
+                <div class="col-6">
+                  <input type="text" class="form-control">
+                </div> 
+                </div>
+              <div class="row mt-3 px-5">
+                <div class="col-2 text-end">
+                  <label for="name">Author Institute<span class="text-danger">*</span>:</label>
+                </div>
+                <div class="col-6">
+                    <ng-select [searchable]="true" [clearable]="false" name="examTypefacultyName" required>                  
+                        <ng-option value="" [disabled]>------------------Select-----------------</ng-option>
+                        </ng-select>
+                  </div>
+                </div>
+                <div class="row mt-3 px-5">
+                  <div class="col-2 text-end">
+                    <label for="name">Scopus Indexed Link<span class="text-danger">*</span>:</label>
+                  </div>
+                  <div class="col-6">
+                    <input type="text" class="form-control">
+                  </div> 
+                  </div>
+                  <div class="row mt-3 px-5">
+                    <div class="col-2 text-end">
+                      <label for="name">Co-Author Institute<span class="text-danger">*</span>:</label>
+                    </div>
+                    <div class="col-9">
+                      <ng-select [searchable]="true" [clearable]="false" name="examTypefacultyName" required>                  
+                        <ng-option value="" [disabled]>------------------Select-----------------</ng-option>
+                          </ng-select>
+                    </div> 
+                  </div>
+                  <div class="row mt-3 px-5">
+                    <div class="col-2 text-end">
+                      <label for="name">Publisher name<span class="text-danger">*</span>:</label>
+                    </div>
+                    <div class="col-6">
+                      <ng-select [searchable]="true" [clearable]="false" name="examTypefacultyName" required>                  
+                        <ng-option value="" [disabled]>------------------Select-----------------</ng-option>
+                          </ng-select>
+                    </div> 
+                  </div>
+                  <div class="row mt-3 px-5">
+                    <div class="col-2 text-end">
+                      <label for="name">Country<span class="text-danger">*</span>:</label>
+                    </div>
+                    <div class="col-6">
+                      <ng-select [searchable]="true" [clearable]="false" name="examTypefacultyName" required>                  
+                        <ng-option value="" [disabled]>------------------Select-----------------</ng-option>
+                          </ng-select>
+                    </div> 
+                  </div>
+                  <div class="row mt-3 px-5">
+                    <div class="col-2 text-end">
+                      <label for="name">ISSN no.<span class="text-danger">*</span>:</label>
+                    </div>
+                    <div class="col-6">
+                      <input type="text" class="form-control">
+                    </div> 
+                    </div>
+                    <div class="row mt-3 px-5">
+                      <div class="col-2 text-end">
+                        <label for="name">Volume no.<span class="text-danger">*</span>:</label>
+                      </div>
+                      <div class="col-6">
+                        <input type="text" class="form-control">
+                      </div> 
+                      </div>
+                      <div class="row mt-3 px-5">
+                        <div class="col-2 text-end">
+                          <label for="name">Issue no.<span class="text-danger">*</span>:</label>
+                        </div>
+                        <div class="col-6">
+                          <input type="text" class="form-control">
+                        </div> 
+                        </div>
+                        <div class="row mt-3 px-5">
+                          <div class="col-2 text-end">
+                            <label for="name">Page no.<span class="text-danger">*</span>:</label>
+                          </div>
+                          <div class="col-1">
+                            <input type="text" class="form-control">
+                          </div>
+                          <div class="col-1">to</div>
+                          <div class="col-1">
+                             <input type="text" class="form-control"></div> 
+                          </div>
+                          <div class="row mt-3 px-5">
+                            <div class="col-2 text-end">
+                              <label for="name">Journal link in Scimagojr<span class="text-danger">*</span>:</label>
+                            </div>
+                            <div class="col-6">
+                              <input type="text" class="form-control">
+                            </div> 
+                            </div>   
+                            <div class="row mt-3 px-5">
+                            <div class="col-2 text-end">
+                            <label for="name">Published link<span class="text-danger">*</span>:</label>
+                            </div>
+                            <div class="col-6">
+                              <input type="text" class="form-control">
+                            </div> 
+                            </div>   
+                            <!-- <div class="row mt-3 px-5">
+                              <div class="col-2 text-end">
+                              </div>
+                              <div class="col-6">
+                                <input type="text" class="form-control">
+                              </div> 
+                              </div>   
+                              <div class="row mt-3 px-5">
+                                <div class="col-2 text-end">
+                                  <label for="name">Journal Scimagojr SJR value<span class="text-danger">*</span>:</label>
+                                </div>
+                                <div class="col-6">
+                                  <input type="text" class="form-control">
+                                </div> 
+                                </div>   
+                                <div class="row mt-3 px-5">
+                                  <div class="col-2 text-end">
+                                    <label for="name">Journal Scimagojr H index<span class="text-danger">*</span>:</label>
+                                  </div>
+                                  <div class="col-6">
+                                    <input type="text" class="form-control">
+                                  </div> 
+                                  </div>   
+                                  <div class="row mt-3 px-5">
+                                    <div class="col-2 text-end">
+                                      <label for="name">Journal Impact factor<span class="text-danger">*</span>:</label>
+                                    </div>
+                                    <div class="col-6">
+                                      <input type="text" class="form-control">
+                                    </div> 
+                                    </div>   
+                                    <div class="row mt-3 px-5">
+                                      <div class="col">
+                                        <label for="name">Whether Journal indexed in Thomson Reuter Web of Science? Type<span class="text-danger">*</span>:</label>
+                                      </div>  
+                                      <div class="row mt-3 px-5">
+                                        <div class="col-1">
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                                        <label class="form-check-label" for="gridRadios1">
+                                          Yes
+                                        </label>
+                                      </div>
+                                      <div class="form-check"> 
+                                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                                        <label class="form-check-label" for="gridRadios2">
+                                          No
+                                        </label>
+                                      </div>        
+                                    </div>
+                                    </div> -->
+                                    
+                      <div class="row my-3">
+                        <div class="col-12 text-center">
+                          <button class="btn btn-success" type="submit">Submit</button>
+                        </div>
+                      </div>
+                              
+    </form>
+  </div>
+   </div>

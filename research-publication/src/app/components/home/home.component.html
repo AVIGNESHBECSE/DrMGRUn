@@ -1,0 +1,85 @@
+<div class="container">
+    <div class="row mt-3 border-bottom">
+        <div class="col-12">
+            <span class="fs-6 fw-semibold ">Research Scholar Publication</span>
+        </div>
+    </div>
+
+
+    <div class="row mt-3">
+        <!-- <div class="col-3">
+            <label for=""><span class="fs-6 fw-semibold me-2">Total Records :</span><span
+                    class="badge text-bg-success">{{totalRecord}}</span></label>
+        </div> -->
+        <div class="col-6">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control mx-2" placeholder="Search by name" aria-label="Recipient's username" #searchText
+                    aria-describedby="button-addon2">
+                <button class="btn btn-outline-secondary rounded" type="button" id="button-addon2" (click)="searchByName(searchText.value)">Search</button>
+            </div>
+
+        </div>
+        <div class="col-2">
+            <button class="btn btn-primary" (click)="researchExport()"><i class="fa fa-download me-2" aria-hidden="true"></i>Export Excel</button>
+         </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    
+        <div class="col-2">
+            <button class="btn btn-outline-success" aria-current="page" (click)=" researchScholar()">
+                <i class="fa fa-plus me-2" aria-hidden="true"></i>Create</button> 
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-12">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Faculty</th>
+                        <th scope="col">Department</th>
+                        <th scope="col">Designation</th>
+                        <th scope="col">File Attached 	</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Print</th>
+                  
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                    <tr *ngFor="let each of researchDatas;let i=index;"> 
+                      <td>{{i+((curPos * 1)+1)}}</td>
+                      <td><a [routerLink]="" (click)="viewTechnical(each.id)">{{each.name}}</a></td>
+                      <td>{{each.facultyName}}</td>
+                      <td>{{each.departmentName}}</td>
+                      <td>{{each.designation}}</td>
+                      <td>{{each.journalAttachment.length}}</td>
+                      <td style="text-align: center;"> <a (click)="researchScholaredite(each)"><i class="fa fa-pencil text-warning" aria-hidden="true"title="Edit"></i></a></td>
+                      <td style="text-align: center;"> <a (click)="print(each)"><i class="fa fa-print text-primary" aria-hidden="true"title="Print"></i></a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              
+        </div>
+    </div>
+    
+    <div class="row mt-3">
+        <div class="col-12">
+    <div *ngIf="researchDatas?.length == 0">
+        <br/><br/>
+        <div class='alert alert-warning'><span class='badge text-bg-warning'>Status</span>&nbsp;Sorry!, no data found.</div>
+    </div>
+</div>
+</div>
+
+    <div class="row mt-3">
+        <div class="col-12">
+            <div class="pagination pull-right">
+                <input type="button" id="pre" [disabled] = "curPos == 0" value="« Prev" title="Newer" class="btn"   (click)="researchPagination((curPos * 1) - 25)" >
+                <input type="button" value="Next »" [disabled] = "researchDatas?.length < 25" id="nex" title="Older" class="btn"  (click)="researchPagination( (curPos * 1) + 25)">
+            </div>
+        </div>
+    </div> 
+</div>

@@ -1,0 +1,385 @@
+<div class="container">
+  <div class="row mt-3 border-bottom">
+      <!-- <div class="col-12">
+         <span class="fs-6 fw-semibold">Research Scholar Publication Self Appraisal Form 
+          </span>
+          <button type="button" class="close" aria-label="Close" (click)="close()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+      </div> -->
+  </div>
+  <div class="modal-content">
+<form #researchForm="ngForm">
+  <div class="modal-header">
+  <span class="fs-6 fw-semibold">Research Scholar Publication Self Appraisal Form 
+  </span>
+  <button type="button" class="close" aria-label="Close" (click)="close()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  </div>
+  <div class="row">
+    <div class="col">
+<div class="form-row mt-3 px-5">
+  <div class="col-4">
+    <label for="name" >Name<span class="text-danger">*</span>:</label>
+</div>
+  <div class="col-9">
+    <input type="text" class="form-control" #name="ngModel" placeholder="Name" id="name"
+      name="name" [(ngModel)]="create.name" ngModel required>
+    <span
+      *ngIf="(researchForm.submitted && name.invalid) || (name.invalid && name.touched)"
+      style="color: red;">
+      Name required
+    </span>
+  </div>
+</div>
+
+<div class="form-row mt-3 px-5">
+  <div class="col-4">
+    <label for="color" >Faculty<span class="text-danger">*</span>:</label>
+  </div>
+  <div class="col-9">
+ 
+    <ng-select [searchable]="true" [clearable]="false" #facultyName="ngModel" name="examTypefacultyName" required
+            [(ngModel)]="create.facultyName" (change)="getDepartmentList(create.facultyName)">
+            <ng-option value="" [disabled]>------------------Select-----------------</ng-option>
+            <ng-option [value]="each" *ngFor="let each of facultys">
+              {{each.name}}
+            </ng-option>
+          </ng-select>
+    <span *ngIf="(researchForm.submitted && facultyName.invalid) || (facultyName.invalid && facultyName.touched)"
+      style="color: red;">Faculty Required</span>
+  </div>
+</div>
+<div class="form-row mt-3 px-5">
+  <div class="col-4">
+    <label for="color" class="col-form-label">Department<span class="text-danger">*</span>:</label>
+  </div>
+  <div class="col-9">
+    <ng-select [searchable]="true" [clearable]="false" #departmentName="ngModel" name="departmentName" required
+      [(ngModel)]="create.departmentName" (change)="getDepartmentId(create.departmentName)">
+      <ng-option value="" [disabled]>-----------------Select-----------------</ng-option>
+      <ng-option [value]="each" *ngFor="let each of department">
+        {{each.name}}
+      </ng-option>
+    </ng-select>
+    <span *ngIf="(researchForm.submitted && departmentName.invalid) || (departmentName.invalid && departmentName.touched)"
+      style="color: red;">Department Required</span>
+  </div>
+</div>
+
+<div class="form-row mt-3 px-5">
+  <div class="col-4">
+    <label for="color" class="col-form-label">Designation<span class="text-danger">*</span>:</label>
+  </div>
+  <div class="col-9">
+    <ng-select [searchable]="true" [clearable]="false" #designation="ngModel" name="designation" required
+      [(ngModel)]="create.designation">
+      <ng-option value="" [disabled]>----------------Select-----------------</ng-option>
+      <ng-option [value]="each.name" *ngFor="let each of designationList">
+        {{each.name}}
+      </ng-option>
+    </ng-select>
+    <span *ngIf="(researchForm.submitted && designation.invalid) || (designation.invalid && designation.touched)"
+      style="color: red;">Designation Required</span>
+  </div>
+</div>
+
+<div class="form-row mt-3 px-5">
+  <div class="col-4">
+    <label for="color" class="col-form-label">Full Time / Part Time<span class="text-danger">*</span>:</label>
+  </div>
+  <div class="col-9">
+    <ng-select [searchable]="true" [clearable]="false" #duration="ngModel" name="duration" required
+      [(ngModel)]="create.duration">
+      <ng-option value="" [disabled]>----------------Select-----------------</ng-option>
+      <ng-option [value]="each" *ngFor="let each of ['Full Time','Part Time']">
+        {{each}}
+      </ng-option>
+    </ng-select>
+    <span *ngIf="(researchForm.submitted && duration.invalid) || (duration.invalid && duration.touched)"
+      style="color: red;"> Required</span>
+  </div>
+</div>
+
+<div class="form-row mt-3 px-5">
+  <div class="col-4">
+    <label for="color" class="col-form-label">University Name<span class="text-danger">*</span>:</label>
+  </div>
+  <div class="col-9">
+    <ng-select [searchable]="true" [clearable]="false" #universityName="ngModel" name="universityName" required
+      [(ngModel)]="create.universityName" (change)="other(create.universityName)">
+      <ng-option value="" [disabled]>---------------Select-----------------</ng-option>
+      <ng-option [value]="each" *ngFor="let each of ['Dr. M.G.R. EDUCATIONAL AND RESEARCH INSTITUTE UNIVERSITY','Others']">
+        {{each}}
+      </ng-option>
+    </ng-select>
+    <span *ngIf="(researchForm.submitted && universityName.invalid) || (universityName.invalid && universityName.touched)"
+      style="color: red;"> University Name is Required</span>
+  </div>
+
+
+</div>
+
+<div class="row mt-3 px-5" *ngIf="showText">
+  <div class="col-4">
+    <label for="universityName" class="col-form-label">Institute Name<span class="text-danger">*</span>:</label>
+  </div>
+  <div class="col-9">
+    <input type="text" class="form-control" #instituteName placeholder=""  
+      name="instituteName" (change)="got(instituteName.value)" ngModel required>
+    <!-- <span
+      *ngIf="(researchForm.submitted && universityName.invalid) || (universityName.invalid && universityName.touched)"
+      style="color: red;">
+      Name required
+    </span> -->
+  </div>
+</div>
+
+
+
+
+<!-- <div class="row" *ngIf="journal?.length != 0">
+  <span *ngFor="let each of journal;let i=index">
+    <div class="row">
+      <div class="col-12">
+        <div class="text-end text-danger"><a [routerLink]="" (click)="removeJournalAttachment(i,each)"><i
+              class="fa fa-remove"></i></a></div>
+      </div>
+    </div> -->
+
+    <div class="row" *ngIf="journal?.length != 0">
+      <span *ngFor="let each of journal;let i=index">
+  
+
+    <div class="form-row mt-3 px-5">
+      <div class="col-4">
+        <label for="name" class="col-form-label">Journal Title<span class="text-danger">*</span>:</label>
+      </div>
+      <div class="col-9">
+        {{each.title}}
+      </div>
+    </div>
+
+    <div class="form-row mt-3 px-5">
+      <div class="col-4">
+        <label for="name" class="col-form-label">Published Link<span class="text-danger">*</span>:</label>
+      </div>
+      <div class="col-9">
+        {{each.publishedLink}}
+      </div>
+    </div>
+
+    <div class="form-row mt-3 px-5">
+      <div class="col-4">
+        <label for="fileAttached" class="col-form-label">Journal Publication<span
+            class="text-danger">*</span>:</label>
+      </div>
+
+      <div class="col-9">
+        {{each.fileAttach.fileKey}} <a [routerLink]="" (click)="removeJournalAttachment(i,each)"><i
+          class="fa fa-times text-danger icon-size mx-5"></i></a>
+      </div>
+    </div>
+  </span>
+</div>
+
+<div class="row" *ngIf="newFileUpload">
+<span>
+
+
+   <div class="form-row mt-3 px-5">
+    <div class="col-4">
+      <label for="name" class="col-form-label">Journal Title<span class="text-danger">*</span>:</label>
+    </div>
+    <div class="col-9">
+      <input type="text" class="form-control" #title="ngModel" placeholder="title" id="title"
+        name="title" [(ngModel)]="createFile.title" ngModel required>
+      <span
+        *ngIf="(researchForm.submitted && title.invalid) || (title.invalid && title.touched)"
+        style="color: red;">
+        Required
+      </span>
+    </div>
+  </div>
+
+  <div class="form-row mt-3 px-5">
+    <div class="col-4">
+      <label for="name" class="col-form-label">Published Link<span class="text-danger">*</span>:</label>
+    </div>
+    <div class="col-9">
+      <input type="text" class="form-control" #publishedLink="ngModel" placeholder="publishedLink" id="title"
+        name="publishedLink" [(ngModel)]="createFile.publishedLink" ngModel required>
+      <span
+        *ngIf="(researchForm.submitted && publishedLink.invalid) || (publishedLink.invalid && publishedLink.touched)"
+        style="color: red;">
+        Required
+      </span>
+    </div>
+  </div>
+<div class="row mt-2">
+  <!-- <div class="col-4"></div> -->
+  <div class="col">
+    <div class="offset-1 alert alert-warning">
+			<span class="badge text-bg-info">Note :
+			
+			</span>
+			Valid Extension: .pdf, .doc, .ppt.,	Max upload : 10 MB.
+	
+    
+			</div>
+  </div>
+</div>
+  <div class="form-row mt-3 px-5">
+    <div class="col-4">
+    <label for="fileAttached" class="col-form-label">Journal Publication<span class="text-danger">*</span>:</label>
+    </div>
+    <div class="col-9">
+    <ng-container *ngIf="fileAttachment == false">
+    <input class="form-control"  type="file" id="File" (change)="onChange($event)" name="fileAttach"  #file="ngModel"  [ngModel]="" required>
+     <div *ngIf="(researchForm.submitted && file.invalid)">
+     <p style="color: red;"> Required.</p>
+    </div> 
+    </ng-container>
+    
+    <!-- <div class="col-2"> -->
+    <!-- *ngIf="showUploadButton -->
+      <!-- <label>{{fileLabel}}</label> -->
+
+      <!-- <button  class="btn btn-success"
+        (click)="onUpload()">Uploadsssssssssssss</button> -->
+    <!-- </div> -->
+    </div>
+    </div>
+  </span>
+</div>
+<div class="row">
+  <div class="col-12 text-end">
+    <a [routerLink]="" title="Click this to add more" (click)="add()">Add more..</a>
+  </div>
+</div>
+</div>
+<div class="col">
+<div class="form-row mt-3 px-5" >
+  <div class="col-4">
+    <label for="universityName" class="col-form-label">No. of Journal Publication Attached :</label>
+  </div>
+  <div class="col-9">
+   {{create.journalPublication}}
+  </div>
+</div>
+
+<div class="form-row mt-3 px-5">
+  <div class="col-4">
+    <label for="name" class="col-form-label">No. of Conference Publication Indexed in Reputed Digital Library<span class="text-danger">*</span>:</label>
+  </div>
+  <div class="col-9 mt-2">
+    <input type="text" class="form-control" #conferencePublication="ngModel" placeholder="conferencePublication" id="conferencePublication" (keypress)="numericOnly($event)"
+      name="conferencePublication" [(ngModel)]="create.conferencePublication" ngModel required>
+    <span
+      *ngIf="(researchForm.submitted && conferencePublication.invalid) || (conferencePublication.invalid && conferencePublication.touched)"
+      style="color: red;">
+      Required
+    </span>
+  </div>
+</div>
+
+<div class="form-row mt-3 px-5">
+  <div class="col-4">
+  </div>
+  <div class="col-9">
+    <input type="text" class="form-control" #firstAuthorTotal="ngModel" placeholder="" id="firstAuthorTotal" (keypress)="numericOnly($event)"
+      name="firstAuthorTotal" [(ngModel)]="create.firstAuthorTotal" ngModel required>
+    <span
+      *ngIf="(researchForm.submitted && firstAuthorTotal.invalid) || (firstAuthorTotal.invalid && firstAuthorTotal.touched)"
+      style="color: red;">
+      Required
+    </span>
+  </div>
+</div>
+
+<div class="form-row mt-3 px-5">
+  <div class="col-4">
+    <label for="name" class="col-form-label">The cumulative SJR value of Published Journals Indexed in Scopus<span class="text-danger">*</span>:</label>
+  </div>
+  <div class="col-9">
+    <input type="text" class="form-control" #cumulativeSJRValue="ngModel" placeholder="" id="cumulativeSJRValue" (keypress)="numericOnly($event)"
+      name="cumulativeSJRValue" [(ngModel)]="create.cumulativeSJRValue" ngModel required>
+    <span
+      *ngIf="(researchForm.submitted && cumulativeSJRValue.invalid) || (cumulativeSJRValue.invalid && cumulativeSJRValue.touched)"
+      style="color: red;">
+      Name required
+    </span>
+  </div>
+</div>
+
+<div class="form-row mt-3 px-5">
+  <div class="col-4">
+    <label for="name" class="col-form-label">The Cumulative Impact Factor (Thomson Reuters Index) of Published Journal<span class="text-danger">*</span>:</label>
+  </div>
+  <div class="col-9">
+    <input type="text" class="form-control" #cumulativeImpactFactor="ngModel" placeholder="" id="cumulativeImpactFactor" (keypress)="numericOnly($event)"
+      name="cumulativeImpactFactor" [(ngModel)]="create.cumulativeImpactFactor" ngModel required>
+    <span
+      *ngIf="(researchForm.submitted && cumulativeImpactFactor.invalid) || (cumulativeImpactFactor.invalid && cumulativeImpactFactor.touched)"
+      style="color: red;">
+      Required
+    </span>
+  </div>
+</div>
+
+<div class="form-row mt-3 px-5">
+  <div class="col-4">
+    <label for="name" class="col-form-label">The Highest Impact Factor (Thomson Reuters Index) of Published Journal <span class="text-danger">*</span>:</label>
+  </div>
+  <div class="col-9">
+    <input type="text" class="form-control" #highestImpactFactor="ngModel" placeholder="" id="highestImpactFactor" (keypress)="numericOnly($event)"
+      name="highestImpactFactor" [(ngModel)]="create.highestImpactFactor" ngModel required>
+    <span
+      *ngIf="(researchForm.submitted && highestImpactFactor.invalid) || (highestImpactFactor.invalid && highestImpactFactor.touched)"
+      style="color: red;">
+      Required
+    </span>
+  </div>
+</div>
+
+<div class="form-row mt-3 px-5">
+  <div class="col-4">
+    <label for="name" class="col-form-label">Total Journal H-Index <span class="text-danger">*</span>:</label>
+  </div>
+  <div class="col-9">
+    <input type="text" class="form-control" #totalJournalHIndex="ngModel" placeholder="" id="totalJournalHIndex" (keypress)="numericOnly($event)"
+      name="totalJournalHIndex" [(ngModel)]="create.totalJournalHIndex" ngModel required>
+    <span
+      *ngIf="(researchForm.submitted && totalJournalHIndex.invalid) || (totalJournalHIndex.invalid && totalJournalHIndex.touched)"
+      style="color: red;">
+      Required
+    </span>
+  </div>
+</div>
+
+<div class="form-row mt-3 px-5">
+  <div class="col-4">
+    <label for="name" class="col-form-label">Highest Journal H-Index <span class="text-danger">*</span>:</label>
+  </div>
+  <div class="col-9">
+    <input type="text" class="form-control" #highestJournalHIndex="ngModel" placeholder="" id="highestJournalHIndex" (keypress)="numericOnly($event)"
+      name="highestJournalHIndex" [(ngModel)]="create.highestJournalHIndex" ngModel required>
+    <span
+      *ngIf="(researchForm.submitted && highestJournalHIndex.invalid) || (highestJournalHIndex.invalid && highestJournalHIndex.touched)"
+      style="color: red;">
+      Required
+    </span>
+  </div>
+</div>
+</div>
+</div>
+<div class="row my-3">
+  <div class="col-12 text-center">
+    <button class="btn btn-success" type="submit" (click)="onSubmit(researchForm.form,researchForm.form.valid)">Create</button>
+
+  </div>
+</div>
+</form>  
+  </div>
+  </div>

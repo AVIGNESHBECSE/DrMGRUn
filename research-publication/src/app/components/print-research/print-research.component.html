@@ -1,0 +1,157 @@
+<div class="containter">
+    <div class="id">
+        <div class="row mt-3">
+            <div class="col-12 text-end">
+                <p>FORM NO. - F/ SD / 009B Rev.01 Date 11.07.2016</p>
+
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-12 text-center border-bottom">
+                <h6>Dr. M.G.R. EDUCATIONAL AND RESEARCH INSTITUTE UNIVERSITY</h6>
+                <span>
+                    <h6>Chennai - 600095</h6>
+                </span>
+                <span>(An ISO 9001 : 2008 Certified Institution)</span>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-12">
+                <span class="text-center">
+                    <h6>Research Scholar Publication Self Appraisal Form</h6>
+                </span>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-12 text-end">
+                <i class="fa fa-print noprint" aria-hidden="true" (click)="print()">Print</i>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-12">
+                <table class="table table-bordered">
+
+                    <tbody>
+                        <tr>
+
+                            <td><strong>Name:</strong></td>
+                            <td>{{researchPublication.name}}</td>
+                            <td><strong>University:</strong></td>
+                            <td>{{(researchPublication.universityName).toLowerCase()}}</td>
+                        </tr>
+                        <tr>
+
+                            <td><strong>Department:</strong></td>
+                            <td>{{researchPublication.departmentName}}</td>
+                            <td><strong>Designation:</strong></td>
+                            <td>{{researchPublication.designation}}</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-12">
+              <div class="table-responsive">
+                    <table class="table table-bordered jack_table">
+                        <thead>
+                            <tr>
+                                <th scope="col">S.No</th>
+
+                                <th scope="col">Content</th>
+                                <th scope="col">NO.</th>
+
+                            </tr>
+
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-dark">1</td>
+                                <td class="text-dark">No. of Journal Publication</td>
+                                <td>{{researchPublication.journalPublication}}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-dark">2</td>
+                                <td class="text-dark">No. of Conference Publication Indexed in Reputed Digital Library
+                                </td>
+                                <td>{{researchPublication.conferencePublication}}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-dark">3</td>
+                                <td>Total No. of Publication as First Author</td>
+                                <td>{{researchPublication.firstAuthorTotal}}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-dark">4</td>
+                                <td>The cumulative SJR value of Published Journals Indexed in Scopus</td>
+                                <td>{{researchPublication.cumulativeSJRValue}}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-dark">5</td>
+                                <td>The Cumulative Impact Factor (Thomson Reuters Index) of Published
+                                    Journal</td>
+                                <td>{{researchPublication.cumulativeImpactFactor}}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-dark">6</td>
+                                <td>The Highest Impact Factor (Thomson Reuters Index) of Published Journal</td>
+                                <td>{{researchPublication.highestImpactFactor}}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-dark">7</td>
+                                <td>Total Journal H-Index</td>
+                                <td>{{researchPublication.totalJournalHIndex}}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-dark">8</td>
+                                <td>Highest Journal H-Index</td>
+                                <td>{{researchPublication.highestJournalHIndex}}</td>
+                            </tr>
+                            <tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="row mt-4 px-3">
+            <div class="col-6">
+                <h6><strong>Scholar(Signature)</strong>.............................................
+                </h6>
+            </div>
+            <div class="col-6">
+                <h6><strong>Supervisor:</strong>...................................................</h6>
+            </div>
+        </div>
+
+
+        <div class="row mt-5 px-3">
+            <div class="col-6">
+                <h6><strong>Dept Journal Club Coordinator(Signature)</strong>...................................</h6>
+            </div>
+            <div class="col-6">
+                <h6><strong>Dept.Head(Signature):</strong>................................</h6>
+            </div>
+        </div>
+
+        <!-- <div class="row mt-5"></div> -->
+       
+       
+        <div class="row mt-5">
+            <div class="col-6">
+                <h6><strong>Dean(Academic Events and Publication)</strong></h6>
+            </div>
+            <div class="col-6">
+<h6><strong>Dean Research</strong></h6>
+            </div>
+        </div>
+
+    </div>
+    </div>
+    

@@ -1,0 +1,143 @@
+<div class="containter">
+    <div class="row mt-3">
+        <div class="col-12 py-0 border-bottom">
+            <span class="fs-6 fw-semibold">
+                Research Scholar Publication Self Appraisal Form
+            </span>
+        </div>
+
+    </div>
+
+
+    <div class="row mt-3">
+        <div class="col-2">
+            <a (click)="goBack()" class="btn btn-success"><i class="fa fa-arrow-circle-left text-warning pe-2"
+                    aria-hidden="true"></i>Back</a>
+        </div>
+        <div class="col-10 text-end">
+            <button class="btn btn-warning me-3" [routerLink]="" (click)="update()">Edit</button>
+            <button type="button" class="btn btn-danger me-3" (click)="delete()">Delete</button>
+            <button class="btn btn-primary" (click)="print()">Print</button>
+        </div>
+
+    </div>
+
+    <form>
+        <div class="row mt-3 px-3">
+            <div class="col-6">
+                <label for=""><b>Name :</b></label>
+            </div>
+            <div class="col-6">
+                {{researchData.name}}
+            </div>
+        </div>
+        <div class="row mt-3  px-3">
+            <div class="col-6">
+                <label for=""><b>Faculty :</b></label>
+            </div>
+            <div class="col-6">
+                {{researchData.facultyName}}
+            </div>
+        </div>
+        <div class="row mt-3  px-3">
+            <div class="col-6">
+                <label for=""><b>Designation :</b></label>
+            </div>
+            <div class="col-6">
+                {{researchData.designation}}
+            </div>
+        </div>
+        <div class="row mt-3  px-3">
+            <div class="col-6">
+                <label for=""><b>No. of Journal Publication Attached :</b></label>
+            </div>
+            <div class="col-6">
+                {{researchData.journalPublication}}
+            </div>
+        </div>
+        <div class="row mt-3  px-3">
+            <div class="col-6">
+                <label for=""><b>No. of Conference Publication Indexed in Reputed Digital Library :</b></label>
+            </div>
+            <div class="col-6">
+                {{researchData.conferencePublication}}
+            </div>
+        </div>
+        <div class="row mt-3  px-3">
+            <div class="col-6">
+                <label for=""><b>Total No. of Publication as First Author :</b></label>
+            </div>
+            <div class="col-6">
+                {{researchData.firstAuthorTotal}}
+            </div>
+        </div>
+        <div class="row mt-3  px-3">
+            <div class="col-6">
+                <label for=""><b>The cumulative SJR value of Published Journals Indexed in Scopus :</b></label>
+            </div>
+            <div class="col-6">
+                {{researchData.cumulativeSJRValue}}
+            </div>
+        </div>
+        <div class="row mt-3  px-3">
+            <div class="col-6">
+                <label for=""><b>The Cumulative Impact Factor (Thomson Reuters Index) of Published Journal  :</b></label>
+            </div>
+            <div class="col-6">
+                {{researchData.cumulativeImpactFactor}}
+            </div>
+        </div>
+        <div class="row mt-3  px-3">
+            <div class="col-6">
+                <label for=""><b>The Highest Impact Factor (Thomson Reuters Index) of Published Journal :</b></label>
+            </div>
+            <div class="col-6">
+                {{researchData.highestImpactFactor}}
+            </div>
+        </div>
+        <div class="row mt-3  px-3">
+            <div class="col-6">
+                <label for=""><b>Total Journal H-Index :</b></label>
+            </div>
+            <div class="col-6">
+                {{researchData.totalJournalHIndex}}
+            </div>
+        </div>
+        <div class="row mt-3  px-3">
+            <div class="col-6">
+                <label for=""><b>Highest Journal H-Index :</b></label>
+            </div>
+            <div class="col-6">
+                {{researchData.highestJournalHIndex}}
+            </div>
+        </div>
+    </form>
+    <div class="row mt-5">
+        <div class="col-12 py-0 border-bottom">
+            <span class="fs-6 fw-semibold">
+               Attachments
+            </span>
+        </div>
+        <div class="row mt-3 px-2">
+            <div class="col-12">
+                <div class="table-responsive">
+                <table>
+                    <thead>
+                       
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let attach of researchData.journalAttachment; let i=index">
+        <td scope="col">{{i+1}}</td>&nbsp;&nbsp;&nbsp;
+        <td scope="col">{{attach.title}}</td>&nbsp;&nbsp;&nbsp;
+        <td scope="col"><a href="{{attach.publishedLink}}">{{attach.publishedLink}}</a></td>&nbsp;&nbsp;&nbsp;
+        <td scope="col"><a href="{{attach.fileAttach.url}}">{{attach.fileAttach.fileKey}}</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+</div>

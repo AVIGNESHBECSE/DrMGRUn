@@ -1,0 +1,64 @@
+   <div class="containter">
+    <div class="row mt-3">
+      <div class="col-12 text-center">
+          <h5><b>Publication</b></h5>
+      </div>
+    </div>
+    <div class="col-12 text-end">
+        <!-- <button class="btn btn-success me-2" type="button" title="create New PO">Export as Excel</button> -->
+        <div class="btn-group" role="group">
+        <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Export as Excel</button>
+        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+        <a class="dropdown-item" href="#">Journal</a>
+        <a class="dropdown-item" href="#">Conference</a>
+        </div>
+        </div>
+    </div>  
+    <div class="col-6">
+      <div class="input-group mb-3">
+          <input type="text" class="form-control mx-2" placeholder="Paper Title" aria-label="Recipient's username" #searchText
+              aria-describedby="button-addon2">
+          <button class="btn btn-secondary rounded"  type="button" id="button-addon2">Search</button>&nbsp;&nbsp;&nbsp;
+          <div class="col-2">
+          <button class="btn btn-info rounded" (click)="goToJournal()" type="button" id="button-addon2">Journal</button>        
+          </div>
+          <div class="col-2">
+          <button class="btn btn-info rounded" (click)="goToConference()" type="button" id="button-addon2">Conference</button>
+          </div>
+          <!-- <div class="btn-group" role="group">
+
+        <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Create</button>
+        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+        <a class="dropdown-item" routerLink="journal" routerLinkActive="active">Journal</a>
+        <a class="dropdown-item" routerLink="conference" routerLinkActive="active">Conference</a>
+        </div>
+      </div> -->
+    </div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Paper Title</th>
+          <th scope="col">Type</th>
+          <th scope="col">Publisher</th>
+          <th scope="col">Year</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row"></th>
+          <td></td>
+          <td>Otto</td>
+          <td>@mdo</td>
+          <td>@mdo</td>
+        </tr>
+        <!-- <tr *ngFor="let PaperType of sgPaperType let i = index">
+          <th scope="row">{{i+1}}</th>
+          <td>{{eventType.name}}</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+          <td>@mdo</td>
+        </tr> -->
+    </tbody>
+</table>
+</div> 
