@@ -1,0 +1,42 @@
+<!-- <div class="container">
+    <div class="text-center mt-5">
+        <h3>Publication</h3>
+    </div>
+</div> -->
+
+<section class="container-fluid flex-grow">
+    <div class="row">
+        <div class="col-md-10 order-md-1 pt-3">
+            <div class="bg-faded mb-3">
+                <div class="card bg-light">
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-2 order-md-2 pt-4 d-print-none">
+            <div class="list-group">
+                <a routerLink="publication/home" class="list-group-item list-group-item-action"
+                    [routerLinkActiveOptions]="{exact:
+                  true}" routerLinkActive="active-link"><i class="fa fa-home"></i>&nbsp;Home</a>
+                <a routerLink="/publication/create" class="list-group-item list-group-item-action"
+                    [routerLinkActiveOptions]="{exact:
+                      true}" routerLinkActive="active-link"><i class="fa fa-pluse"></i>&nbsp;Create</a>
+                <a routerLink="/publication/journal" class="list-group-item list-group-item-action"
+                    [routerLinkActiveOptions]="{exact:
+                        true}" routerLinkActive="active-link" (click)="">&nbsp;Journal</a>
+                <a routerLink="/publication/conference" class="list-group-item list-group-item-action"
+                    [routerLinkActiveOptions]="{exact:
+                            true}" routerLinkActive="active-link" (click)="">&nbsp;Conference</a>
+
+                <a routerLink="/publication/filter" class="list-group-item list-group-item-action"
+                    [routerLinkActiveOptions]="{exact:
+                                true}" routerLinkActive="active-link"><i class="fa fa-filter"></i>&nbsp;Filter</a>
+                    <a routerLink="/publication/report" class="list-group-item list-group-item-action"
+                    [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active-link"><i class="fa fa-report"></i>&nbsp;Report
+                    </a>
+
+            </div>
+        </div>
+    </div>
+</section>
